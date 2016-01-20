@@ -10,10 +10,15 @@ class FeelingController extends BaseController
 	public function Feeling()
 	{
 		$model=D('Feeling');
-		$info=$model->showlist();
-
+		$res=$model->showlist();
+		
+		$info=$res['info'];
+		$pageStr=$res['pageStr'];
+		// echo '<pre>';
+		// print_r($pageStr);exit;
 		$this->assign(array(
-				'info'=>$info
+				'info'=>$info,
+				'pageStr'=>$pageStr
 			));
 		$this->display();
 	}

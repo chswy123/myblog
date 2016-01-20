@@ -71,20 +71,16 @@
                     <!-- <td><a href="" class="templatemo-link">Action</a></td> -->
                     <td><a href="<?php echo U('Blog/del').'?id='.$v['id']; ?>" class="templatemo-del-btn">删除</a></td>
                   </tr>
+                  
                <?php } ?>
-
+                  <tr>
+                    <td colspan="10"><div id="Pagination" ><?php echo $pageStr; ?></div>  </td>
+                  </tr>
                 </tbody>
               </table>
             </div>    
           </div>  
 
-          <div><!-- <div class="templatemo-flex-row flex-content-row"> -->
-            <div><!-- <div class="templatemo-content-widget white-bg col-1"> -->
-            <i class="fa fa-times"></i>  <!--删除按钮-->
-                123  <div id="Pagination" ><?php echo $pageStr; ?></div>  
-            </div>
-
-          </div>  
 
 
           

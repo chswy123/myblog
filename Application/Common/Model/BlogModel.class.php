@@ -15,8 +15,8 @@ class BlogModel extends Model
 		$count=$blog->count();
 		$page=new \Think\Page($count,$prePage=5);
 
-		$page->setConfig('prev','上一页');
-		$page->setConfig('next','下一页');
+		$page->setConfig('prev','<<');
+		$page->setConfig('next','>>');
 		$pageStr=$page->show();
 		// echo '<pre>';
 		// print_r($page);exit;

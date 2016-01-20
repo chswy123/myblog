@@ -71,6 +71,11 @@
      
 
   
+<style>
+    #Pagination a:hover,.current{background-color: #f54281;border: 1px solid #f54281;color: #ffffff; }
+    #Pagination{float: right;height: auto;_height: 45px; line-height: 20px;margin-right: 15px;_margin-right: 5px; color:#565656;margin-top: 10px;_margin-top: 20px; clear:both;}
+    #Pagination a,#Pagination span{ font-size: 14px;text-decoration: none;display: block;float: left;color: #565656;border: 1px solid #ccc;height: 34px;line-height: 34px;margin: 0 2px;width: 34px;text-align: center;}
+</style>
 <script>
     $(function(){
         $("#feelingactive").attr("class","active");
@@ -136,7 +141,9 @@
                     <td><a href="<?php echo U('Feeling/del').'?id='.$v['id']; ?>" class="templatemo-del-btn">删除</a></td>
                   </tr>
                <?php } ?>
-                                    
+                  <tr>
+                    <td colspan="10"><div id="Pagination" ><?php echo $pageStr; ?></div> </td>
+                  </tr>          
                 </tbody>
               </table>    
             </div>                          

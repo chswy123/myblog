@@ -11,8 +11,20 @@ class FeelingModel extends Model
 	public function showlist()
 	{
 		$model=M('Feeling');
-		$info=$model->select();
-		return $info;
+
+		$count=$model->count();
+		$page=new \Think\Page($count,$prepage=5);
+
+		$page->setConfig('prev','<<');
+		$page->setConfig('next','>>');
+		$pageStr=$page->show();
+
+		$info=$model->limit($page->firstRow.','.$page->listRows)->select();
+
+		return array(
+				'info'=>$info,
+				'pageStr'=>$pageStr
+			);
 	}
 
 
