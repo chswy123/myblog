@@ -10,9 +10,12 @@ class GalleryController extends BaseController
 	public function gallery()
 	{	
 		$model=D('Gallery');
-		$info=$model->show();
-		
+		$res=$model->show();
+
+		$info = $res['info'];
+		$pageStr=$res['pageStr'];
 		$this->assign(array(
+				'pageStr'=>$pageStr,
 				'info'=>$info
 			));
 		$this->display();

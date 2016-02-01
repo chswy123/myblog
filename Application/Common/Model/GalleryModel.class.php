@@ -10,7 +10,18 @@ class GalleryModel extends Model
 	public function show()
 	{
 		$model=M('Gallery');
-		return $model->select();
+
+		$count = $model->count();
+		$page = new \Think\Page($count,$prepage=5);
+		$page->setConfig('prev','<<');
+		$page->setConfig('next','>>');
+		$pageStr=$page->show();
+
+		$info = $model->limit($page->firstRow.','.$page->listRows)->select();
+		return array(
+				'info'=>$info,
+				'pageStr'=>$pageStr
+			);
 	}
 
 
