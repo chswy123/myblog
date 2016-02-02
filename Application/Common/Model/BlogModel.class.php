@@ -20,8 +20,8 @@ class BlogModel extends Model
 		$pageStr=$page->show();
 		// echo '<pre>';
 		// print_r($page);exit;
-		$info=$blog->limit($page->firstRow.','.$page->listRows)->select();
-
+		$info=$blog->order('id desc')->limit($page->firstRow.','.$page->listRows)->select();
+		// print_r($info);exit;
 		return array(
 				'info'=>$info,
 				'pageStr'=>$pageStr
@@ -44,7 +44,7 @@ class BlogModel extends Model
 			$config['savePath'] = 'Blog/';
 			$upload = new \Think\Upload($config);
 			$info = $upload -> upload();
-			// echo '<pre>';
+			echo '<pre>';
 			// print_r($info);exit;
 			if(!$info)
 			{
@@ -56,7 +56,13 @@ class BlogModel extends Model
 				$blog=M('Blog');
 				$data=$_POST;
 				$data['image']=$info['upload']['savepath'].$info['upload']['savename'];
-				$data['image_small']='';
+
+				//生成缩略图，并路径存入数据库
+				$image=new \Think\Image();
+				$image->open($config['rootPath'].$data['image']);
+				$sm_image=$info['upload']['savepath'].'sm_'.$info['upload']['savename'];
+				$image->thumb(80,80)->save($config['rootPath'].$sm_image);
+				$data['image_small']=$sm_image;
 				$data['date']=date('Y-m-d h:i:s');
 				$blog->add($data);
 				return TRUE;
@@ -110,6 +116,13 @@ class BlogModel extends Model
 				$blog=M('Blog');
 				$data=$_POST;
 				$data['image']=$info['upload']['savepath'].$info['upload']['savename'];
+
+				//生成缩略图，并路径存入数据库
+				$image=new \Think\Image();
+				$image->open($config['rootPath'].$data['image']);
+				$sm_image=$info['upload']['savepath'].'sm_'.$info['upload']['savename'];
+				$image->thumb(80,80)->save($config['rootPath'].$sm_image);
+				$data['image_small']=$sm_image;
 				$data['date']=date('Y-m-d h:i:s');
 				$id=$_POST['id'];
 				$blog->where("id=$id")->save($data);

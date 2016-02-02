@@ -17,7 +17,7 @@ class GalleryModel extends Model
 		$page->setConfig('next','>>');
 		$pageStr=$page->show();
 
-		$info = $model->limit($page->firstRow.','.$page->listRows)->select();
+		$info = $model->order('id desc')->limit($page->firstRow.','.$page->listRows)->select();
 		return array(
 				'info'=>$info,
 				'pageStr'=>$pageStr
@@ -48,7 +48,13 @@ class GalleryModel extends Model
 			$gar=M('Gallery');
 			$data=$_POST;
 			$data['image']=$info['upload']['savepath'].$info['upload']['savename'];
-			$data['image_small']='';
+			
+			//生成缩略图，并路径存入数据库
+			$image=new \Think\Image();
+			$image->open($config['rootPath'].$data['image']);
+			$sm_image=$info['upload']['savepath'].'sm_'.$info['upload']['savename'];
+			$image->thumb(80,80)->save($config['rootPath'].$sm_image);
+			$data['image_small']=$sm_image;
 			$data['date']=date('Y-m-d H:i:s');
 			$gar->add($data);
 			return TRUE;
