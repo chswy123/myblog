@@ -26,6 +26,18 @@ class GalleryModel extends Model
 
 
 	/*
+	**	前台中部的六条记录输出*
+	**  author by wy
+	*/
+	public function indexmid()
+	{
+		$model=M('Gallery');
+		$info=$model->order('id desc')->limit('6')->select();
+		return $info;		
+	}
+
+
+	/*
 	**	上传图片*
 	**  author by wy
 	*/

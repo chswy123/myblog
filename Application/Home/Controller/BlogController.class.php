@@ -6,7 +6,10 @@ class BlogController extends Controller
 	public function blog()
 	{	
 		$model=D('Blog');
-		$info=$model->showlist();
+		$res=$model->showlist();
+		$info=$res['info'];
+		$pageStr=$res['pageStr'];
+		// echo '<pre>';
 		// print_r($info);exit;
 
 		$this->assign(array(

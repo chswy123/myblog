@@ -131,12 +131,14 @@
 	<div class="banner-bottom">
 		<div class="container">
 			<div class="row">
+			<?php foreach($garinfo as $v){ ?>
 				<div class="col-md-4 bb-grids">
-					<a href="singlepage.html" class="thumbnail">
-					  <img src="__ROOT__/Application/Home/Common/images/img1.jpg" alt="">
+					<a href="" class="thumbnail">
+					  <img src="__PUBLIC__/Uploads/<?php echo $v['image']; ?>" alt="">
 					</a>
 				</div>
-				<div class="col-md-4 bb-grids">
+			<?php } ?>
+				<!-- <div class="col-md-4 bb-grids">
 					<a href="singlepage.html" class="thumbnail">
 					  <img src="__ROOT__/Application/Home/Common/images/img2.jpg" alt="">
 					</a>
@@ -145,27 +147,27 @@
 					<a href="singlepage.html" class="thumbnail">
 					  <img src="__ROOT__/Application/Home/Common/images/img3.jpg" alt="">
 					</a>
-				</div>
+				</div> -->
 				<div class="clearfix"></div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 bb-grids">
+			<!-- <div class="row"> -->
+				<!-- <div class="col-md-4 bb-grids">
 					<a href="singlepage.html" class="thumbnail">
 					  <img src="__ROOT__/Application/Home/Common/images/img4.jpg" alt="">
 					</a>
-				</div>
-				<div class="col-md-4 bb-grids">
+				</div> -->
+				<!-- <div class="col-md-4 bb-grids">
 					<a href="singlepage.html" class="thumbnail">
 					  <img src="__ROOT__/Application/Home/Common/images/img5.jpg" alt="">
 					</a>
-				</div>
-				<div class="col-md-4 bb-grids">
+				</div> -->
+				<!-- <div class="col-md-4 bb-grids">
 					<a href="singlepage.html" class="thumbnail">
 					  <img src="__ROOT__/Application/Home/Common/images/img6.jpg" alt="">
 					</a>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
+				</div> -->
+				<!-- <div class="clearfix"> </div> -->
+			<!-- </div> -->
 		</div>	
 	</div>	
 	<div class="banner-bottom">

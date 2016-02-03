@@ -6,8 +6,12 @@ class FeelingController extends Controller
 	public function feeling()
 	{	
 		$model=D('Feeling');
-		$info=$model->showlist();
+		$res=$model->showlist();
+		$info=$res['info'];
+		$pageStr=$res['pageStr'];
 
+		// echo '<pre>';
+		// print_r($pageStr);exit;
 		$this->assign(array(
 				'info'=>$info
 			));
