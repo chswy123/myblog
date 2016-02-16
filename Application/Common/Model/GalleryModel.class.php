@@ -38,6 +38,18 @@ class GalleryModel extends Model
 
 
 	/*
+	**	前台相册页面的12条记录输出*
+	**  author by wy
+	*/
+	public function indexgar()
+	{
+		$model=M('Gallery');
+		$info=$model->order('id desc')->limit('12')->where('is_show = 1')->select();
+		// print_r($info);exit;
+		return $info;
+	}
+
+	/*
 	**	上传图片*
 	**  author by wy
 	*/
