@@ -13,7 +13,8 @@ class FeelingController extends Controller
 		// echo '<pre>';
 		// print_r($pageStr);exit;
 		$this->assign(array(
-				'info'=>$info
+				'info'=>$info,
+				'pageStr'=>$pageStr
 			));
 		$this->display();
 	}
