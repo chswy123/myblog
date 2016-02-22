@@ -38,6 +38,26 @@ class IndexController extends BaseController
     }
 
 
+    public function ajaxnews(){
+    	$ch = curl_init();
+	    $url = 'http://apis.baidu.com/songshuxiansheng/news/news';
+	    $header = array(
+	        'apikey: 2383f4209ac7a5c7578d316ce231b0cf',
+	    );
+	    // 添加apikey到header
+	    curl_setopt($ch, CURLOPT_HTTPHEADER  , $header);
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	    // 执行HTTP请求
+	    curl_setopt($ch , CURLOPT_URL , $url);
+	    $res = curl_exec($ch);
+
+	    $arr = json_decode($res,1);
+	    $info = $arr['retData'];
+	    // echo '<pre>';
+	    echo $info[rand(0,4)]['abstract'];
+	    // print_r($info);
+    }
+
 
 
 
