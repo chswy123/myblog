@@ -3,3 +3,5 @@ http://my.oschina.net/richardx/blog/82016   简单的MVC框架
 
 
 这是测试1
+
+这是测试2
