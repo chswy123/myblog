@@ -16,7 +16,7 @@
       function ajaxtime(){
           $.ajax({
           type:"GET",
-          url:"http://www.tptest.com/index.php/Admin/Index/ajaxtime",
+          url:"http://www.myblog.com/index.php/Admin/Index/ajaxtime",
           dataType:"html",
           success:function(msg){
             $("#time").html(msg);
@@ -29,7 +29,7 @@
       function ajaxnews(){
           $.ajax({
           type:"GET",
-          url:"http://www.tptest.com/index.php/Admin/Index/ajaxnews",
+          url:"http://www.myblog.com/index.php/Admin/Index/ajaxnews",
           dataType:"html",
           success:function(msg){
             $("#ajaxnews").html(msg);
@@ -68,7 +68,7 @@
               <i class="fa fa-times"></i>
               <h2 class="text-uppercase"><?php echo $info['retData']['city']; ?></h2>
               <h3 class="text-uppercase margin-bottom-10" id='time'></h3>
-              <img src="<?php __ROOT__; ?>/public/images/bicycle.jpg" alt="Bicycle" class="img-circle img-thumbnail">
+              <img src="__ROOT__/public/images/bicycle.jpg" alt="Bicycle" class="img-circle img-thumbnail">
             </div>
             <div class="templatemo-content-widget white-bg col-1">
               <i class="fa fa-times"></i>  <!--删除按钮-->
@@ -117,7 +117,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object img-circle" src="<?php __ROOT__; ?>/public/images/sunset.jpg" alt="Sunset">
+                      <img class="media-object img-circle" src="__ROOT__/public/images/sunset.jpg" alt="Sunset">
                     </a>
                   </div>
                   <div class="media-body">
@@ -131,7 +131,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object img-circle" src="<?php __ROOT__; ?>/public/images/sunset.jpg" alt="Sunset">
+                      <img class="media-object img-circle" src="__ROOT__/public/images/sunset.jpg" alt="Sunset">
                     </a>
                   </div>
                   <div class="media-body">
@@ -219,8 +219,8 @@
     </div>
     
     <!-- JS -->
-    <script src="<?php __ROOT__; ?>/public/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
-    <script src="<?php __ROOT__; ?>/public/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
+    <script src="__ROOT__public/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
+    <script src="__ROOT__/public/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
     <!-- <script src="https://www.google.com/jsapi"></script> --> <!-- Google Chart -->
     <script>
       /* Google Chart 
@@ -279,7 +279,7 @@
       });
       
     </script>
-    <script type="text/javascript" src="<?php __ROOT__; ?>/public/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+    <script type="text/javascript" src="__ROOT__/public/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
 
   </body>
 </html>

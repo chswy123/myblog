@@ -10,9 +10,9 @@
     
     <!--<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>-->
     <link href="/Public/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="<?php ; ?>/public/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php ; ?>/public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php ; ?>/public/css/templatemo-style.css" rel="stylesheet">
+    <link href="/public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/templatemo-style.css" rel="stylesheet">
 
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,7 +42,7 @@
           <h1>博客</h1>
         </header>
         <div class="profile-photo-container">
-          <img src="<?php ; ?>/public/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
+          <img src="/public/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
           <div class="profile-photo-overlay"></div>
         </div>      
         <!-- Search box -->

@@ -20,7 +20,7 @@ header('content-type:text/html;charset=utf8');
 define('APP_DEBUG',True);
 
 // 定义应用目录
-define('APP_PATH','./Application/');
+define('APP_PATH','./myblog/');
 
 // 引入ThinkPHP入口文件
 require './ThinkPHP/ThinkPHP.php';

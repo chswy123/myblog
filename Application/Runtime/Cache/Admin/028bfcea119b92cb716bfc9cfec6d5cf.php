@@ -10,9 +10,9 @@
     
     <!--<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>-->
     <link href="/Public/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="<?php ; ?>/public/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php ; ?>/public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php ; ?>/public/css/templatemo-style.css" rel="stylesheet">
+    <link href="/public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/templatemo-style.css" rel="stylesheet">
 
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,7 +42,7 @@
           <h1>博客</h1>
         </header>
         <div class="profile-photo-container">
-          <img src="<?php ; ?>/public/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
+          <img src="/public/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
           <div class="profile-photo-overlay"></div>
         </div>      
         <!-- Search box -->
@@ -72,7 +72,7 @@
 
   
 <style>
-    #Pagination a:hover,.current{background-color: #f54281;border: 1px solid #f54281;color: #ffffff; }
+    #Pagination a:hover,.current{background-color: #39adb4;border: 1px solid #39adb4;color: #ffffff; }
     #Pagination{float: right;height: auto;_height: 45px; line-height: 20px;margin-right: 15px;_margin-right: 5px; color:#565656;margin-top: 10px;_margin-top: 20px; clear:both;}
     #Pagination a,#Pagination span{ font-size: 14px;text-decoration: none;display: block;float: left;color: #565656;border: 1px solid #ccc;height: 34px;line-height: 34px;margin: 0 2px;width: 34px;text-align: center;}
 </style>
@@ -137,7 +137,7 @@
                     <td><?php echo $v['tag']; ?></td>
                     <td><?php echo $v['date']; ?></td>
           					<td><?php echo $v['dianzan']; ?></td>
-          					<td>empty</td>
+          					<td><img src="/Public/Uploads/<?php echo $v['image_small']; ?>" alt=""></td>
           					<td><?php echo $v['is_show']; ?></td>
                     <td><a href="<?php echo U('Blog/showedit').'?id='.$v['id']; ?>" class="templatemo-edit-btn">编辑</a></td>
                     <!-- <td><a href="" class="templatemo-link">Action</a></td> -->

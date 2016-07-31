@@ -9,10 +9,10 @@
         <meta name="author" content="templatemo">
         
 	   <!--  <link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>-->
-	    <link href="<?php ; ?>/public/css/font-awesome.min.css" rel="stylesheet">
-	    <link href="<?php ; ?>/public/css/bootstrap.min.css" rel="stylesheet">
-	    <link href="<?php ; ?>/public/css/templatemo-style.css" rel="stylesheet">
-			<script src="<?php ; ?>/public/js/jquery-1.8.3.min.js"></script>
+	    <link href="/public/css/font-awesome.min.css" rel="stylesheet">
+	    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="/public/css/templatemo-style.css" rel="stylesheet">
+			<script src="/public/js/jquery-1.8.3.min.js"></script>
 	<script>
 		function checkuser(){
 			$.ajax({

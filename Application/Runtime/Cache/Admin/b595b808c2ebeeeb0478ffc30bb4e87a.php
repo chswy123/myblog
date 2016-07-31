@@ -10,9 +10,9 @@
     
     <!--<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>-->
     <link href="/Public/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="<?php ; ?>/public/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php ; ?>/public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php ; ?>/public/css/templatemo-style.css" rel="stylesheet">
+    <link href="/public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/templatemo-style.css" rel="stylesheet">
 
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,7 +42,7 @@
           <h1>博客</h1>
         </header>
         <div class="profile-photo-container">
-          <img src="<?php ; ?>/public/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
+          <img src="/public/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
           <div class="profile-photo-overlay"></div>
         </div>      
         <!-- Search box -->
@@ -75,7 +75,40 @@
     $(function(){
         $("#indexactive").attr("class","active");
 
+        $.get("http://www.tptest.com/index.php/Admin/Index/ajaxtime",function(data){
+        $("#time").html(data);                                                         //初始时间
+      });
+
+        $.get("http://www.tptest.com/index.php/Admin/Index/ajaxnews",function(news){
+        $("#ajaxnews").html(news);                                                         //初始新闻
+      });
     });
+
+
+      function ajaxtime(){
+          $.ajax({
+          type:"GET",
+          url:"http://www.myblog.com/index.php/Admin/Index/ajaxtime",
+          dataType:"html",
+          success:function(msg){
+            $("#time").html(msg);
+          }
+        });
+      }
+
+    setInterval("ajaxtime()",1000); 
+
+      function ajaxnews(){
+          $.ajax({
+          type:"GET",
+          url:"http://www.myblog.com/index.php/Admin/Index/ajaxnews",
+          dataType:"html",
+          success:function(msg){
+            $("#ajaxnews").html(msg);
+          }
+        });
+      }
+
 </script>
 
    <!-- Main content --> 
@@ -92,35 +125,39 @@
             </nav> 
           </div>
         </div>
-        
+
         <div class="templatemo-content-container">
           <div class="templatemo-flex-row flex-content-row">
             <div class="templatemo-content-widget white-bg col-2">
               <i class="fa fa-times"></i>
               <div class="square"></div>
-              <h2 class="templatemo-inline-block">Visual Admin Template</h2><hr>
-              <p>Works on all major browsers. IE 10+. Visual Admin is <a href="#" target="_parent">free responsive admin template</a> for everyone. Feel free to use this template for your backend user interfaces. Please tell your friends about <a href="http://www.templatemo.com" target="_parent">templatemo.com</a> website. You may <a href="#" target="_parent">contact us</a> if you have anything to say.</p>
-              <p>Nunc placerat purus eu tincidunt consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus nulla quis risus auctor, non placerat augue consectetur. Fusce mi lacus, semper sit amet mattis eu.</p>              
+              <h2 class="templatemo-inline-block">新闻</h2><hr>
+              <p id="ajaxnews"></p>
+              <input type="button" value="换一换" onclick="ajaxnews()">
+              <p id="ajaxnews"></p>              
             </div>
             <div class="templatemo-content-widget white-bg col-1 text-center">
               <i class="fa fa-times"></i>
-              <h2 class="text-uppercase">Maris</h2>
-              <h3 class="text-uppercase margin-bottom-10">Design Project</h3>
-              <img src="<?php ; ?>/public/images/bicycle.jpg" alt="Bicycle" class="img-circle img-thumbnail">
+              <h2 class="text-uppercase"><?php echo $info['retData']['city']; ?></h2>
+              <h3 class="text-uppercase margin-bottom-10" id='time'></h3>
+              <img src="/public/images/bicycle.jpg" alt="Bicycle" class="img-circle img-thumbnail">
             </div>
             <div class="templatemo-content-widget white-bg col-1">
               <i class="fa fa-times"></i>  <!--删除按钮-->
-              <h2 class="text-uppercase">Dictum</h2>
-              <h3 class="text-uppercase">Sedvel Erat Non</h3><hr>
+              <h2 class="text-uppercase">指标</h2>
+              <h3 class="text-uppercase">上次更新时间：<?php echo $info['retData']['date'].'&nbsp;'.$info['retData']['time']; ?></h3><hr>
 
               <div class="progress">
-                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">温度：<?php echo $info['retData']['temp']; ?>℃</div>
               </div>
               <div class="progress">
-                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;"></div>
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">最低气温：<?php echo $info['retData']['l_tmp']; ?>℃</div>
               </div>
               <div class="progress">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">最高气温：<?php echo $info['retData']['h_tmp']; ?>℃</div>
+              </div> 
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">风力：<?php echo $info['retData']['WS']; ?></div>
               </div> 
             </div>
           </div>
@@ -152,7 +189,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object img-circle" src="<?php ; ?>/public/images/sunset.jpg" alt="Sunset">
+                      <img class="media-object img-circle" src="/public/images/sunset.jpg" alt="Sunset">
                     </a>
                   </div>
                   <div class="media-body">
@@ -166,7 +203,7 @@
                 <div class="media">
                   <div class="media-left">
                     <a href="#">
-                      <img class="media-object img-circle" src="<?php ; ?>/public/images/sunset.jpg" alt="Sunset">
+                      <img class="media-object img-circle" src="/public/images/sunset.jpg" alt="Sunset">
                     </a>
                   </div>
                   <div class="media-body">
@@ -254,8 +291,8 @@
     </div>
     
     <!-- JS -->
-    <script src="<?php ; ?>/public/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
-    <script src="<?php ; ?>/public/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
+    <script src="public/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
+    <script src="/public/js/jquery-migrate-1.2.1.min.js"></script> <!--  jQuery Migrate Plugin -->
     <!-- <script src="https://www.google.com/jsapi"></script> --> <!-- Google Chart -->
     <script>
       /* Google Chart 
@@ -314,7 +351,7 @@
       });
       
     </script>
-    <script type="text/javascript" src="<?php ; ?>/public/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+    <script type="text/javascript" src="/public/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
 
   </body>
 </html>

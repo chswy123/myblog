@@ -13,6 +13,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Excursion Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<style>
+    #Pagination a:hover,.current{background-color: #5f9ea0;border: 1px solid #5f9ea0;color: #ffffff; }
+    #Pagination{float: right;height: auto;_height: 45px; line-height: 20px;margin-right: 15px;_margin-right: 5px; color:#565656;margin-top: 10px;_margin-top: 20px; clear:both;}
+    #Pagination a,#Pagination span{ font-size: 14px;text-decoration: none;display: block;float: left;color: #565656;border: 1px solid #ccc;height: 34px;line-height: 34px;margin: 0 2px;width: 34px;text-align: center;}
+</style>
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //Custom Theme files -->
 <!-- js -->
@@ -106,6 +111,9 @@
 				<div class="clearfix"> </div>
 			</div>
 <?php } ?>
+			<div id="Pagination">
+				<?php echo $pageStr; ?>
+			</div>
 	
 
 	<!--
@@ -172,11 +180,13 @@
 <div class="footer">
 		<div class="container">
 			<div class="col-md-4 about">
-				<h3>About Us</h3>	
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<h3>关于</h3>	
+				<p>aaaaaaaaaaaaaaaaaaaaaaaaaa,
+				bbbbbbbbbbbbb,
+				cccccccccc</p>
 			</div>
 			<div class="col-md-4 posts">
-				<h3>Popular Posts</h3>
+				<h3>放啥呢</h3>
 				<div class="media">
 					<div class="media-left">
 						<a href="singlepage.html">
@@ -184,8 +194,8 @@
 						</a>
 				    </div>
 					<div class="media-body">
-						<h4 class="media-heading"><a href="singlepage.html">Lorest Nesto</a></h4>
-						<h5>April 17, 2015</h5>
+						<h4 class="media-heading"><a href="singlepage.html">北京</a></h4>
+						<h5><?php echo date('Y-m-d'); ?></h5>
 					</div>
 				</div>
 				<div class="media">
@@ -195,8 +205,8 @@
 						</a>
 				    </div>
 					<div class="media-body">
-						<h4 class="media-heading"><a href="singlepage.html">Lorest Nesto</a></h4>
-						<h5>April 17, 2015</h5>
+						<h4 class="media-heading"><a href="singlepage.html">北京</a></h4>
+						<h5><?php echo date('Y-m-d'); ?></h5>
 					</div>
 				</div>
 				<div class="media">
@@ -206,26 +216,27 @@
 						</a>
 				    </div>
 					<div class="media-body">
-						<h4 class="media-heading"><a href="singlepage.html">Lorest Nesto</a></h4>
-						<h5>April 17, 2015</h5>
+						<h4 class="media-heading"><a href="singlepage.html">北京</a></h4>
+						<h5><?php echo date('Y-m-d'); ?></h5>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 address">
-				<h3>Our address</h3>
-				<p>Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus,
-					luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta </p>
+				<h3>我的位置</h3>
+				<p>北京
+					海淀
+					朝阳</p>
 				<ul>
-					<li><span></span>Moonshine St. 14/05 Light, Jupiter</li>
-					<li><span class="ph-no"></span>+00 (123) 456 78 90</li>
-					<li><span class="mail"></span><a href="mailto:example@mail.com">mail@example.com</a></li>
+					<li><span></span>宇宙</li>
+					<li><span class="ph-no"></span>1234567890123</li>
+					<li><span class="mail"></span><a href="mailto:example@mail.com">test@163.com</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<div class="copy-right">
+	<!-- <div class="copy-right">
 		<div class="container">
 			<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
 		</div>
-	</div>
+	</div> -->

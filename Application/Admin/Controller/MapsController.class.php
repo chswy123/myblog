@@ -4,7 +4,8 @@
 class MapsController extends BaseController
 {
 	public function maps()
-	{
+	{	
+		echo 123;
 		$this->display();
 	}
 }

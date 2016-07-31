@@ -1,0 +1,10 @@
+[ 2016-07-31T11:25:06+08:00 ] 127.0.0.1 /index.php/Home/Blog/content.html?id=8
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000235s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000254s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000321s ]
+NOTIC: [8] A session had already been started - ignoring session_start() /Library/WebServer/Documents/myblog/ThinkPHP/Common/functions.php 第 1263 行.
+ERR: 无法加载控制器:Blog
+

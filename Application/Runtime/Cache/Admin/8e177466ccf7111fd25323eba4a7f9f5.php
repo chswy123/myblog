@@ -10,9 +10,9 @@
     
     <!--<link href='http://fonts.useso.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'>-->
     <link href="/Public/jqvmap/jqvmap.css" media="screen" rel="stylesheet" type="text/css" /> 
-    <link href="<?php ; ?>/public/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?php ; ?>/public/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?php ; ?>/public/css/templatemo-style.css" rel="stylesheet">
+    <link href="/public/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/public/css/templatemo-style.css" rel="stylesheet">
 
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -42,7 +42,7 @@
           <h1>博客</h1>
         </header>
         <div class="profile-photo-container">
-          <img src="<?php ; ?>/public/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
+          <img src="/public/images/profile-photo.jpg" alt="Profile Photo" class="img-responsive">  
           <div class="profile-photo-overlay"></div>
         </div>      
         <!-- Search box -->
@@ -58,13 +58,13 @@
         <nav class="templatemo-left-nav">          
           <ul>
             <li><a href="<?php echo U('Index/index'); ?>" id="indexactive"><i class="fa fa-home fa-fw"></i>主页</a></li>
-            <li><a href="<?php echo U('Blog/blog'); ?>" id="blogactive"><i class="fa fa-users fa-fw"></i>博文</a></li>
-            <li><a href="<?php echo U('Feeling/feeling'); ?>" id="feelingactive"><i class="fa fa-users fa-fw"></i>心情</a></li>
-			<li><a href="<?php echo U('Gallery/gallery'); ?>" id="galleryactive"><i class="fa fa-users fa-fw"></i>图集</a></li>
+            <li><a href="<?php echo U('Blog/blog'); ?>" id="blogactive"><i class="fa fa-file-text fa-fw"></i>博文</a></li>
+            <li><a href="<?php echo U('Feeling/feeling'); ?>" id="feelingactive"><i class="fa fa-comment fa-fw"></i>心情</a></li>
+			<li><a href="<?php echo U('Gallery/gallery'); ?>" id="galleryactive"><i class="fa fa-file-image-o fa-fw"></i>图集</a></li>
             <li><a href="<?php echo U('Maps/maps'); ?>" id="mapsactive"><i class="fa fa-map-marker fa-fw"></i>地图Maps</a></li>
             <li><a href="<?php echo U('Manage/manage'); ?>" id="manageactive"><i class="fa fa-users fa-fw"></i>管理员用户Manage Users</a></li>
             <li><a href="<?php echo U('Set/set'); ?>" id="setactive"><i class="fa fa-sliders fa-fw"></i>偏好Preferences</a></li>
-            <li><a href="<?php echo U('Login/logout'); ?>"><i class="fa fa-eject fa-fw"></i>登出Sign Out</a></li>
+            <li><a href="<?php echo U('Login/logout'); ?>"><i class="fa fa-sign-out fa-fw"></i>登出Sign Out</a></li>
           </ul>  
         </nav>
       </div>
@@ -92,7 +92,7 @@
             </nav>
           </div>
         </div>
-		
+		    
         <div class="templatemo-content-container">
           <div class="templatemo-content-widget white-bg">
             <h2 class="margin-bottom-10">添加博文</h2>
