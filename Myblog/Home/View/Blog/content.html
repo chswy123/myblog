@@ -15,7 +15,7 @@
 <!--<script type="Myblog/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>-->
 <!-- //Custom Theme files -->
 <!-- js -->
-<!-- <script src="https://ajax.useso.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->  
+<script src="__ROOT__/Public/js/jquery-1.8.3.min.js"></script>  
 <!-- //js -->	
 <!-- start-smoth-scrolling-->
 <!--<script type="text/javascript" src="__ROOT__/Myblog/Home/Common/js/move-top.js"></script>
@@ -27,6 +27,20 @@
 		// 		$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 		// 	});
 		// });
+
+	function dianzan(){
+		// alert(123);
+		var id = <?php echo $info['id'];?>;
+		var url = "<?php echo U('Blog/dianzanAsy'); ?>";
+		// console.log(url);
+		$.post(url,{id:id}).done(function(data){
+			var json_data = eval('('+data+')'); //转字符串成json
+			if(json_data.status == 'fail'){
+				alert('已点赞，不能重复点赞！');
+			}			
+			// alert(data.data);
+		});
+	}
 </script>
 <!--//end-smoth-scrolling-->
 </head>
@@ -104,7 +118,7 @@
 							<li><span class="clndr"></span><?php echo $info['date']; ?></li>
 							<li><span class="admin"></span> <a href="#">Admin</a></li>
 							<!-- <li><span class="cmnts"></span> <a href="#">5 comments</a></li> -->
-							<li><a href="#" class="like"><?php echo $info['dianzan']; ?></a></li>
+							<li><a href="#" onclick="dianzan()" class="like"><?php echo $info['dianzan']; ?></a></li>
 						</ul>
 					</div>
 				</div>	

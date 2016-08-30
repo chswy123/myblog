@@ -44,7 +44,7 @@ class BlogModel extends Model
 			$config['savePath'] = 'Blog/';
 			$upload = new \Think\Upload($config);
 			$info = $upload -> upload();
-			echo '<pre>';
+			// echo '<pre>';
 			// print_r($info);exit;
 			if(!$info)
 			{
@@ -182,6 +182,67 @@ class BlogModel extends Model
 		$id=$_GET['id'];
 		return $model->where("id=$id")->delete();
 	}
+
+
+
+
+
+	/*
+	**	根据博客id号和ip地址进行相关处理*
+	**  params $bolgid  博客id
+	**  params $ip   当前访问ip地址
+	**  author by wy
+	*/
+	public function dianzan($blogid,$ip)
+	{
+		if(!empty($blogid) && !empty($ip))
+		{	
+			$dianzan_model = M('dianzanip');
+			$blog_model = M('blog');
+
+			$count = $dianzan_model->where(array('blog_id'=>$blogid,'ip'=>$ip))->find();
+			
+			if(!$count) //1.如果查不到ip则存入，并点赞加1
+			{
+				$is_insert = $dianzan_model->add(array(
+						'blog_id' => $blogid,
+						'ip' => $ip,
+						'create_date' => date('Y-m-d H:i:s')
+					));
+				if($is_insert) //点赞加1
+				{	
+					$blog_info = $blog_model->where("id=$blogid")->find();
+					$dianzan = $blog_info['dianzan'];
+					$blog_model->where("id=$blogid")->save(array('dianzan'=>$dianzan+1));
+				}
+				return true;
+			}
+			else //2.如果查到ip则不存，点赞不加，并且返回通知
+			{
+				return false;
+			}
+
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
