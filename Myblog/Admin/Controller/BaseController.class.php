@@ -7,6 +7,7 @@ class BaseController extends Controller
 	{
 		parent::__construct();
 		//验证登录
+        //test
 		if(!session('username'))
 		{
 			$this->error('必须先登录!',U('Login/login'));
